@@ -7,7 +7,7 @@ dosseg
   .data
     ARRAY DW 4,3,2,1
 	;init rarray size 4 all 0
-	RARRAY DW 4 DUP (0)
+	RARRAY DW ?,?,?,? ;4 DUP (0)
 
   .code
     main proc

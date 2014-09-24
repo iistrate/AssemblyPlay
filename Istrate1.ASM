@@ -16,22 +16,24 @@ dosseg
 		
 		;begin here, first push everything into stack, then pop will reverse order
 		
+		mov cx, ARRAY
 		;move 0 into di register
 		mov di, 0
 		;move first number's address into bx register
 		mov bx, offset ARRAY
 		loopPUSH:
 			;push numbers onto stack starting with a displacement of 2
-			PUSH 2[bx + di]
+			PUSH [bx + di]
 			;everytime we loop increment di by 2
 			add di, 2
 		loop loopPUSH
 
+		mov cx, ARRAY
 		mov di, 0
 		mov bx, offset RARRAY
 		loopPOP:
 			;pop numbers into array
-			POP 2[bx + di]
+			POP [bx + di]
 			add di, 2
 		loop loopPOP
 

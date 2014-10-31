@@ -16,6 +16,16 @@ dosseg
 		
 		;begin here
 
+		CALL FIBB
+
+		;end here
+
+     mov ax, 4c00h
+     int 21h
+
+    main endp
+
+	FIBB proc
 		;how many times to loop
 		mov cl, mSize
 		;start looping from address of array + 2
@@ -28,11 +38,7 @@ dosseg
 			mov [bx], al
 			inc bx
 		loop top
+		RET
+	endp FIBB
 
-		;end here
-
-     mov ax, 4c00h
-     int 21h
-
-    main endp
     end  main

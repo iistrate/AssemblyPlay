@@ -1,2 +1,9 @@
-Fatal: Unable to open file 'istrate.9'
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00490H 00491H _TEXT              CODE
+ 004A0H 009AFH 00510H _DATA              DATA
+ 009B0H 00AFFH 00150H STACK              STACK
+
+Program entry point at 0000:0010
 

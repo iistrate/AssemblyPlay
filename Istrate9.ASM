@@ -9,6 +9,8 @@ dosseg
 	;prompts
 	prompt db 'INPUT NUMBER: $'
 	foundprompt db 'FOUND NUMBER AT: $'
+	notfoundprompt db 'NUMBER NOT FOUND!$'
+
 	;array
     ARRAY db 2, 4, 6, 8, 10, 12, 14, 16, 19, 23, 26, 27, 29, 32, 33, 35, 36, 43, 54, 57, 59, 63, 66, 69, 72, 79, 82
 	HOWMANY dw $-ARRAY
@@ -46,7 +48,11 @@ dosseg
 				inc bx
 				inc ah
 			loop top
-
+			;print not found
+			call crlf
+			mov ah, 9
+			mov dx, offset notfoundprompt
+			int 21h
 			JMP SENTINEL
 			
 			FOUND:
@@ -59,6 +65,7 @@ dosseg
 			mov al, FOUNDAT
 			mov ah, 0
 			call writeint
+			JMP SENTINEL
 
 			FINISH:
 

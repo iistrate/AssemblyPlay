@@ -14,7 +14,7 @@ dosseg
 		
 		;begin here, first push everything into stack, then pop will reverse order
 
-		mov cx, 4
+		mov cx, sum
 		mov al, 0
 		mov si, 0
 		

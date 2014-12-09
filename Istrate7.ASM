@@ -61,7 +61,7 @@ dosseg
 			top:
 				;convert
 				mov dx, [bx]
-				sub dx, 32d
+				add dx, 32d
 				int 21h
 				call newline
 				inc bx
